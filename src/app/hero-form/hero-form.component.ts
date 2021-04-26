@@ -17,13 +17,16 @@ export class HeroFormComponent implements OnInit {
   }
 
   add(name: string, power: string, alterEgo: string): void {
-    name = name.trim();
-    power= power.trim();
-    alterEgo = alterEgo.trim();
-    if (!name) { return; }
+    console.log("name", name);
+
+    // name = name.trim();
+    // power= power.trim();
+    // alterEgo = alterEgo.trim();
+    // if (!name) { return; }
     this.heroService.addHero({ name, power, alterEgo } as Hero)
       .subscribe(hero => {
         this.heroes.push(hero);
+        console.log("hero", hero);
       });
   }
 
@@ -31,5 +34,7 @@ export class HeroFormComponent implements OnInit {
 
   powers = ['Really Smart', 'Super Flexible',
             'Super Hot', 'Weather Changer'];
+
+
 
 }

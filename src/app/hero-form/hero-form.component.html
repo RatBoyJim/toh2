@@ -1,15 +1,16 @@
   <div>
-    <form #heroForm="ngForm">
+    <form (ngSubmit)="add(name, pow, alterEgo)">
       <label id="new-hero" for="name">Hero name: </label>
       <input
       type="text"
       class="form-control"
       id="name"
       required
-      name="name"/>
+      name="name"
+      #name>
       <div class="form-group">
         <label for="power">Hero Power</label>
-        <select class="form-control" id="power" required>
+        <select class="form-control" id="power" required #pow>
           <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
         </select>
       </div>
@@ -19,15 +20,17 @@
         type="text"
         class="form-control"
         id="alterEgo"
-        name="alterEgo">
+        name="alterEgo"
+        #alterEgo>
       </div>
 
       <!-- (click) passes input value to add() and then clears the input -->
-      <button class="add-button" (click)="add(heroForm.name, heroForm.pow, heroForm.alterEgo); heroForm.name=''">
+      <button type="submit" class="add-button">
         Add hero
       </button>
     </form>
   </div>
 
+  <!-- [(ngModel)]="model.name"  -->
   <!-- [(ngModel)]="hero.name"  -->
   <!-- [(ngModel)]="model.alterEgo"  -->
