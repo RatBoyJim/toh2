@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angulartoh2';
+  title = 'Tour Of Heroes 2 - Tour Harder';
 }
