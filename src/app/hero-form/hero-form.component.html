@@ -1,4 +1,5 @@
   <div>
+    <h3>Add A Hero</h3>
     <form (ngSubmit)="add(name.value, pow.value, alterEgo.value)">
       <label id="new-hero" for="name">Hero name: </label>
       <input
@@ -23,14 +24,8 @@
         name="alterEgo"
         #alterEgo>
       </div>
-
-      <!-- (click) passes input value to add() and then clears the input -->
       <button type="submit" class="add-button">
         Add hero
       </button>
     </form>
   </div>
-
-  <!-- [(ngModel)]="model.name"  -->
-  <!-- [(ngModel)]="hero.name"  -->
-  <!-- [(ngModel)]="model.alterEgo"  -->
