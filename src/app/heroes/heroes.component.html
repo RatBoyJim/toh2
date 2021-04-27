@@ -1,4 +1,4 @@
-<h2>My Heroes</h2>
+<!-- <h2>My Heroes</h2>
 <ul class="heroes">
   <li *ngFor="let hero of heroes">
     <a routerLink="/detail/{{hero.id}}">
@@ -7,4 +7,27 @@
     <button class="delete" title="delete hero"
   (click)="delete(hero)">x</button>
   </li>
-</ul>
+</ul> -->
+
+<h2>My Heroes</h2>
+<nz-table class="heroes" [nzData]="heroes" nzTableLayout="fixed">
+  <thead>
+    <tr>
+      <th nzWidth="200px">Name</th>
+      <th nzWidth="200px">Super Power</th>
+      <th nzWidth="100px">Alter Ego</th>
+      <th nzWidth="100px">Delete?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let hero of heroes">
+      <td><a routerLink="/detail/{{hero.id}}">
+      <span class="badge">{{hero.id}}</span><span>Click for details</span>
+    </a>{{hero.name}}</td>
+      <td>{{hero.power}}</td>
+      <td>{{hero.alterEgo}}</td>
+      <td><button class="delete" title="delete hero"
+        (click)="delete(hero)">x</button></td>
+    </tr>
+  </tbody>
+</nz-table>
