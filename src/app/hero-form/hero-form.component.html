@@ -1,7 +1,7 @@
   <div>
     <h3>Add A Hero</h3>
-    <form (ngSubmit)="add(name.value, pow.value, alterEgo.value)">
-      <label id="new-hero" for="name">Hero name: </label>
+    <form (ngSubmit)="add(name.value, power.value, alterEgo.value)">
+      <label id="new-hero" for="name">Hero Name: </label>
       <input
       type="text"
       class="form-control"
@@ -19,12 +19,9 @@
         #alterEgo>
       </div>
       <div>
-        <a nz-dropdown [nzDropdownMenu]="pow">Hero Power<i nz-icon nzType="down"></i></a>
-        <nz-dropdown-menu #pow="nzDropdownMenu">
-          <ul nz-menu nzSelectable>
-            <li nz-menu-item *ngFor="let pow of powers">{{pow}}</li>
-          </ul>
-        </nz-dropdown-menu>
+        <nz-select nzPlaceHolder="Choose a Power" #power>
+          <nz-option *ngFor="let power of powers" [nzValue]="power" [nzLabel]="power"></nz-option>
+        </nz-select>
       </div>
       <button type="submit" class="add-button">
         Add hero
@@ -38,4 +35,17 @@
     <select class="form-control" id="power" required #pow>
       <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
     </select>
+  </div> -->
+
+  <!-- <nz-select [(ngModel)]="selectedValue" [compareWith]="compareFn" (ngModelChange)="log($event)" nzAllowClear nzPlaceHolder="Choose">
+    <nz-option *ngFor="let option of optionList" [nzValue]="option" [nzLabel]="option.label"></nz-option>
+  </nz-select> -->
+
+  <!-- <div>
+    <a nz-dropdown [nzDropdownMenu]="pow">Hero Power<i nz-icon nzType="down"></i></a>
+    <nz-dropdown-menu #pow="nzDropdownMenu" >
+      <ul nz-menu nzSelectable [(ngModel)]="powers" name="selectedPower">
+        <li nz-menu-item [nzValue]="power" *ngFor="let power of powers">{{power}}</li>
+      </ul>
+    </nz-dropdown-menu>
   </div> -->
