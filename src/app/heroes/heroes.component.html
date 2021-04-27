@@ -13,21 +13,23 @@
 <nz-table class="heroes" [nzData]="heroes" nzTableLayout="fixed">
   <thead>
     <tr>
+      <th nzWidth="200px">ID</th>
       <th nzWidth="200px">Name</th>
       <th nzWidth="200px">Super Power</th>
-      <th nzWidth="100px">Alter Ego</th>
-      <th nzWidth="100px">Delete?</th>
+      <th nzWidth="200px">Alter Ego</th>
+      <th nzWidth="100px"></th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let hero of heroes">
       <td><a routerLink="/detail/{{hero.id}}">
       <span class="badge">{{hero.id}}</span><span>Click for details</span>
-    </a>{{hero.name}}</td>
+    </a></td>
+      <td>{{hero.name}}</td>
       <td>{{hero.power}}</td>
       <td>{{hero.alterEgo}}</td>
       <td><button class="delete" title="delete hero"
-        (click)="delete(hero)">x</button></td>
+        (click)="delete(hero)">Delete</button></td>
     </tr>
   </tbody>
 </nz-table>
