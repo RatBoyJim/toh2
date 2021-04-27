@@ -10,12 +10,6 @@
       name="name"
       #name>
       <div class="form-group">
-        <label for="power">Hero Power</label>
-        <select class="form-control" id="power" required #pow>
-          <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
-        </select>
-      </div>
-      <div class="form-group">
         <label for="alterEgo">Alter Ego</label>
         <input
         type="text"
@@ -24,8 +18,27 @@
         name="alterEgo"
         #alterEgo>
       </div>
+      <div>
+        <a nz-dropdown [nzDropdownMenu]="pow">Hero Power<i nz-icon nzType="down"></i></a>
+        <nz-dropdown-menu #pow="nzDropdownMenu">
+          <ul nz-menu nzSelectable>
+            <li nz-menu-item>Really Smart</li>
+            <li nz-menu-item>Super Flexible</li>
+            <li nz-menu-item>Super Hot</li>
+            <li nz-menu-item>Weather Changer</li>
+          </ul>
+        </nz-dropdown-menu>
+      </div>
       <button type="submit" class="add-button">
         Add hero
       </button>
     </form>
   </div>
+
+
+  <!-- <div class="form-group">
+    <label for="power">Hero Power</label>
+    <select class="form-control" id="power" required #pow>
+      <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
+    </select>
+  </div> -->

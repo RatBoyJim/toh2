@@ -3,6 +3,8 @@ import { Hero } from '../Hero';
 import { HeroService } from '../hero.service';
 import { MessageService } from '../message.service';
 
+import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
+
 
 @Component({
   selector: 'app-hero-form',
@@ -18,6 +20,7 @@ export class HeroFormComponent implements OnInit {
 
   add(name: string, power: string, alterEgo: string): void {
     console.log("name", name);
+    console.log("power", power);
 
     // name = name.trim();
     // power= power.trim();
