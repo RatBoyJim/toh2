@@ -22,10 +22,7 @@
         <a nz-dropdown [nzDropdownMenu]="pow">Hero Power<i nz-icon nzType="down"></i></a>
         <nz-dropdown-menu #pow="nzDropdownMenu">
           <ul nz-menu nzSelectable>
-            <li nz-menu-item>Really Smart</li>
-            <li nz-menu-item>Super Flexible</li>
-            <li nz-menu-item>Super Hot</li>
-            <li nz-menu-item>Weather Changer</li>
+            <li nz-menu-item *ngFor="let pow of powers">{{pow}}</li>
           </ul>
         </nz-dropdown-menu>
       </div>
